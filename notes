@@ -10,3 +10,43 @@ Add the cookie validation key in config/web.php if it does not exist
 -Adding inline styles
 -Using bootswatch.com to select  themes -for UI   https://bootswatch.com/
 -customising the views from bootstwatch
+
+//database
+-creating the schema
+-configuring the database in configs/db.php
+-creating a model to interact with the database
+-The model name must match your table name
+-writing appropriate code in the controllers to fetch the records fromm the database and pass it to appropriate view
+-importing the appropriate model in the controller
+
+Active record helps with CRUD functionalities in yii
+
+//printing sample data to the screen
+  $posts  = Posts::find()->all();
+    echo '<pre>';
+        print_r($posts); //prints to the console
+    echo '</pre>';
+
+//passing the data from the database to the html template
+    $posts  = Posts::find()->all();
+    return $this->render('Home',['posts'=>$posts]);
+
+//mapping the data in the home page
+<?php if(count($posts)>0): ?>
+            <?php foreach($posts as $post): ?>
+                <tr class="table-active">
+                <th scope="row"><?php echo $post->id?></th>
+                <td><?php echo $post->title?></td>
+                <td><?php echo $post->description?></td>
+                <td><?php echo $post->category?></td>
+                <td>
+                    <span><?= Html::a('View')?></span>
+                    <span><?= Html::a('Update')?></span>
+                    <span><?= Html::a('Delete')?></span>
+            
+                </td>
+                </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr>No records found</tr>
+        <?php endif; ?>

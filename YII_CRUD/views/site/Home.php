@@ -12,7 +12,7 @@ $this->title = 'YII CRUD APPLICATION';
     </div>
 
     <div class="body-content">
-
+    <!-- <?php print_r($posts);?> -->
         <div class="row">
 
         <table class="table table-hover">
@@ -27,18 +27,25 @@ $this->title = 'YII CRUD APPLICATION';
                 </tr>
             </thead>
             <tbody>
-                <tr class="table-active">
-                <th scope="row">Active</th>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>
-                    <span><?= Html::a('View')?></span>
-                    <span><?= Html::a('Update')?></span>
-                    <span><?= Html::a('Delete')?></span>
-            
-                </td>
-                </tr>
+
+            <?php if(count($posts)>0): ?>
+                <?php foreach($posts as $post): ?>
+                    <tr class="table-active">
+                    <th scope="row"><?php echo $post->id?></th>
+                    <td><?php echo $post->title?></td>
+                    <td><?php echo $post->description?></td>
+                    <td><?php echo $post->category?></td>
+                    <td>
+                        <span><?= Html::a('View')?></span>
+                        <span><?= Html::a('Update')?></span>
+                        <span><?= Html::a('Delete')?></span>
+                
+                    </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>No records found</tr>
+            <?php endif; ?>
   
         
             </tbody>
