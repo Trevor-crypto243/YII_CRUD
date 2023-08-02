@@ -50,3 +50,34 @@ Active record helps with CRUD functionalities in yii
         <?php else: ?>
             <tr>No records found</tr>
         <?php endif; ?>
+
+URL structure
+http://hostname/index.php?r=ControllerID/ActionID&param1=value1&param2=value2...
+web/index.php?r=site%2Flogin
+index.php - filename
+site - controller
+login - view
+
+Entry Script: index.php - In Yii applications, the index.php is the entry script that serves as the
+starting point of the application.
+Route: r=site%2Flogin - In Yii, the "route" parameter (r) is used to determine which controller action
+to invoke. In this case, the route is encoded as "site%2Flogin". The "%2F" represents the URL-encoded 
+forward slash (/). After decoding, the route becomes "site/login", which means the application is trying to access the "login" action in the "site" controller.
+When this URL is accessed, Yii's URL Manager component will interpret the "route" parameter and invoke 
+the appropriate controller action, in this case, the "login" action within the "site" controller.
+The action can then handle the request and respond accordingly, such as displaying a login form or
+processing the login credentials.
+
+
+//Inserting posts into the database
+<?=Html::a('Create',['/site/create'],['class'=>'btn btn-primary'])?>
+-/site/create   -  the controller and the action
+
+-creating actions for specific user functions
+-Naming conventions - actionCreate
+-working with the ActiveForm widget
+-Creating new table entries 
+-Saving the table entries
+-Working with flash and session messages to display successfull and failed events
+
+
