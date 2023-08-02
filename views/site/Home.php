@@ -7,7 +7,10 @@ $this->title = 'YII CRUD APPLICATION';
 ?>
 <div class="site-index">
     <?php if(yii::$app->session->hasFlash('message')):?>
-        <?php echo yii::$app->session->getFlash('message'); ?>
+        <div class="alert alert-dismissable alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <?php echo yii::$app->session->getFlash('message'); ?>
+        </div>
     <?php endif;?>
 
     <div class="jumbotron text-center bg-transparent mt-5 mb-5">

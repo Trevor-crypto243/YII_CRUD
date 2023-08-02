@@ -82,5 +82,9 @@ processing the login credentials.
 
 
 //Viewing a single post
+-passing the id in the url
+-creating the view action
+
+//updating a particular record
 
 
