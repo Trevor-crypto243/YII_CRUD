@@ -86,6 +86,12 @@ class SiteController extends Controller
         return $this->render('create',['post'=>$post]);
     }
 
+
+    public function actionView($id){
+        $post = Posts::findOne($id);
+        return $this->render('view', ['post'=>$post]);
+    }
+
     /**
      * Login action.
      *
