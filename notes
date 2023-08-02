@@ -1,0 +1,12 @@
+Yii - yes it is
+//creating a new yii project
+composer create-project --prefer-dist yiisoft/yii2-app-basic my_yii_project
+
+Add the cookie validation key in config/web.php if it does not exist
+
+
+//Setting custom html pages
+-changing the actionIndex() to your custom index file in the appropriate controller
+-Adding inline styles
+-Using bootswatch.com to select  themes -for UI   https://bootswatch.com/
+-customising the views from bootstwatch
